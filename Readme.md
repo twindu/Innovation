@@ -1,37 +1,31 @@
-# Cross Asset Deal Rail (CADR) — Sales Pitch Script
-
-**Slide Title:** Cross Asset Deal Rail (CADR): Real-Time Client Decisioning & Execution
-
-**Opening Hook:**  
+# Cross Asset Deal Enabler Platform (CADEP) — What is written on the box
 "Our biggest enemy isn’t the market. It’s our own latency. Clients don’t wait for us to paper docs, check credit, or argue across desks. CADR changes that."
+"Our 2nd biggest enemy, is solving the same problem 10 different ways in silos. This platform is not the coming of Christ where it will revolutionize what is engrained in Banking culture, but it will atleast keep our platform scalable and future proof.
 
-**Key Problems Today:**  
-- Legal docs (ISDA / CSA / Annexes) stall trades for days.  
-- Sales quotes blind because credit limits aren’t visible pre-trade.  
-- Every desk (FX, OTC, Structured) runs approvals differently — chaos in process, lost flow.
+**The What - Key Problems Today:**  
+- Legal docs (ISDA / CSA / Annexes) stall trades for days. A good POC deliverable put into place to solve it. POC is being scaled across without taking a step back.  
+- Sales quotes blind because credit limits aren’t visible pre-trade.  - With the large tech initiative mandated by the firm to adopt Data Mesh, all tech teams such as Credit/Derivatives/Manta/etc. can easily collaborate and strategically integrate solutions with higher velocity and lower over-engineering/tech debt risk.
+- Every desk (FX, OTC, Structured) runs approvals differently — chaos in process, lost flow. - Introudcing ETT on Steroids! We have designed this out to scale globally alongside with the Murex program and can be ued for all CABS.
 
-**The CADR Promise:**  
-A single deal rail that handles underwriting, pre-trade checks, and product suitability across FX, OTC, and Structured — in milliseconds, not days.
+**The CADEP Promise:**  
 
-**Value to Sales/Advisors:**  
+
+**The Why Value to all functions of the product it serves**  
 - Speed: Instant Yes/No/Maybe signals.  
 - Transparency: Pre-trade limits exposed in trader screens.  
 - Consistency: One approval logic across desks.  
 - Client Impact: Faster quotes, higher hit rates, stronger retention.
 
-**Tagline:** Stop waiting. Start winning.
-
-
 # Cross Asset Deal Rail (CADR) — Confluence Blueprint
 
-## Executive Summary
+## The How Executive Summary
 CADR is a unified API and workflow rail that starts with underwriting automation and scales to full trade enablement across FX, OTC, and Structured Products.
 
 ## Vision
-- Client First: Cut trade approval from days to seconds.  
-- Cross Asset: Replace siloed approval systems with a unified rail.  
-- Control with Speed: Risk enforced consistently without slowing sales.  
-- Future Proof: Extensible architecture.
+- Client First: Cut trade approval from days to seconds and provide users with credible SLAs/Data they need to drive revenue.  
+- Cross Asset: Replace siloed approval systems with a unified rail. Did Somebody say TECH DEBT???? 
+- Control with Speed: Risk enforced consistently without slowing sales. - SAM IS GONNA LOVE THIS ONE!  
+- Future Proof: Extensible architecture. - My Favorite, even though I love all my children the same
 
 ## Architecture
 - API Gateway: Unified entry point across desks.  
@@ -40,7 +34,7 @@ CADR is a unified API and workflow rail that starts with underwriting automation
 - Agent Layer: Bedrock AI Agents.  
 - Data Mesh: Real-time limits across desks.
 
-## Example Endpoints
+## Example functions that a single agent can span across multiple products and then have outlier use case agents spawn off of that.
 - /underwriting/score  
 - /fx/quote  
 - /otc/swap/indicative  
@@ -59,60 +53,3 @@ CADR is a unified API and workflow rail that starts with underwriting automation
 - Risk: Unified controls, auditable.  
 - Clients: Faster turnaround, more access.
 
-
-# Workflow Diagrams — Before vs After
-
-## FX Spot/Forward (Before)
-```mermaid
-sequenceDiagram
-    participant Client
-    participant SalesTrader
-    participant Credit
-    participant Legal
-    participant RiskOps
-
-    Client->>SalesTrader: Request EUR/USD 5M 3M forward
-    SalesTrader->>Credit: Email for limit check (manual)
-    Credit->>SalesTrader: Reply (delay hours)
-    SalesTrader->>Legal: Doc readiness?
-    Legal->>SalesTrader: Needs review (days)
-    SalesTrader->>RiskOps: Suitability/Approval
-    RiskOps->>SalesTrader: OK after manual checks
-    SalesTrader->>Client: Quote delivered (missed window)
-```
-
-## FX Spot/Forward (After CADR)
-```mermaid
-sequenceDiagram
-    participant Client
-    participant SalesTrader
-    participant CADR
-    participant Risk
-    participant Pricing
-
-    Client->>SalesTrader: Request EUR/USD 5M 3M forward
-    SalesTrader->>CADR: /fx/quote
-    CADR->>Risk: Pre-trade limit & suitability
-    CADR->>Pricing: Real-time price
-    CADR->>SalesTrader: Instant response {limit_ok, price}
-    SalesTrader->>Client: Quote in seconds
-```
-
-## OTC / Structured Note (After CADR)
-```mermaid
-sequenceDiagram
-    participant Client
-    participant SalesTrader
-    participant CADR
-    participant LegalAgent
-    participant Risk
-    participant Pricing
-
-    Client->>SalesTrader: Request Barrier Note 10M 6M
-    SalesTrader->>CADR: /structured/barrier/validate
-    CADR->>Risk: Credit + Suitability
-    CADR->>LegalAgent: ISDA/CSA doc readiness
-    CADR->>Pricing: Indicative price
-    CADR->>SalesTrader: All-clear + Price + Docs status
-    SalesTrader->>Client: Execute trade immediately
-```
