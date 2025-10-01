@@ -239,11 +239,6 @@ with DAG(
 
 ---
 
-## Original Content (for continuity)
-# Underwriting Process Re-engineering & Credit Risk Analytics Platform
-
-## Executive Summary
-
 **Vision**: Transform traditional mortgage underwriting from a manual, time-intensive process into an intelligent, data-driven system that leverages advanced analytics, machine learning, and real-time risk assessment to improve decision accuracy, reduce processing time, and enhance risk management capabilities.
 
 **Business Impact**: 
